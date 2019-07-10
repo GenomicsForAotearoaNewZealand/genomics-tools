@@ -1,0 +1,1 @@
+alias bowtie2='docker run --rm -v /mnt:/mnt gfanz/bowtie2'; alias bowtie2-align-s='docker run --rm -v /mnt:/mnt --entrypoint "/usr/bin/bowtie2-align-s" gfanz/bowtie2'
