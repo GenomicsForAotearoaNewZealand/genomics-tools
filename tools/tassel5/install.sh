@@ -4,7 +4,7 @@
 # It assumes a Debian 9 base image has been used for the container.
 
 # install bowtie2
-apt-get -y install openjdk-8-jdk-headless
+apt-get -y install openjdk-8-jdk-headless wget
 
 # Move to /opt for installation of the software
 cd /opt
