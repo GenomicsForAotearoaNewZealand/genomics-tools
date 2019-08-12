@@ -67,4 +67,4 @@ RUN ["/bin/bash", "-cx", "/home/debian/install.sh"]
 WORKDIR /mnt
 
 # Set the entrypoint
-ENTRYPOINT ["/usr/bin/run_pipeline.pl"]
+ENTRYPOINT ["/opt/tassel5-src/run_pipeline.pl"]
