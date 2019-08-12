@@ -8,7 +8,12 @@ workflows.
 ## Contributing to this repository
 
 The source code is hosted on https://gitlab.com/gfanz/genomics-tools and a copy
-is kept in github.com for convenience. Please submit merge requests via Gitlab.
+is kept in github.com for convenience. Please submit merge requests via GitLab.
+
+## Proposing a new tool
+
+Thank you for contributing. Please read `tools/README.md` for more information on the conventions and
+structure required to add a tool to the repository.
 
 ### As a researcher, I want to propose a change
 
@@ -39,7 +44,3 @@ is kept in github.com for convenience. Please submit merge requests via Gitlab.
         1.  If you are happy with the changes proposed, check the `Delete source
             branch` box and click on the `Merge` button
 
-## Proposing a new tool
-
-Please read `tools/README.md` for more information on the conventions and
-structure required to add a tool to the repository.
