@@ -30,6 +30,10 @@ structure required to add a tool to the repository.
     `Create merge request` (blue button on the top right)
 1.  On the next page click on `Submit merge request` (green button at the bottom
     of the page)
+1.  Once the change has been accepted and merged by reviewer, clean up the local repository by:
+    1. Change to the master branch: `git branch master` 
+    1. Update the master branch: `git pull`
+    1. Remove your working branch: `git branch -d [your-branch-name]`
 
 ### As a reviewer, I want to accept and merge a change
 
