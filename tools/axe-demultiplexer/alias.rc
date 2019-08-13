@@ -1,0 +1,4 @@
+# This file provides information for making the access to the tool as if it were locally installed. You can have as many
+# aliases as there are access points (as defined in the docker file) which point to executables installed in the
+# docker container by the install.sh script
+alias axe-demux='docker run --rm -v /mnt:/mnt gfanz/template'
