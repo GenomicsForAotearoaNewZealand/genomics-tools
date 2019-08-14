@@ -1,4 +1,5 @@
-# This file provides information for making the access to the tool as if it were locally installed. You can have as many
-# aliases as there are access points (as defined in the docker file) which point to executables installed in the
-# docker container by the install.sh script
+# This file provides information for making the access to the tool as if it were locally installed. The first alias points to 
+# the access point defined in the docker file as in the uncommented example below. Any additional aliases must be in the form:
+# ; alias BINARY-FILE-NAME='docker run --rm -v /mnt:/mnt --entrypoint "PATH-TO-BINARY" gfanz/TOOL'
+# ALL OF THE COMMENT LINES MUST BE REMOVED BEFORE COMMITTING OR THE DOCKER FILE ENTRY WILL BE WRONG
 alias helloworld='docker run --rm -v /mnt:/mnt gfanz/template'
