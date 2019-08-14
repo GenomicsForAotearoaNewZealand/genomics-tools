@@ -1,0 +1,1 @@
+alias bayescan='docker run --rm -v /mnt:/mnt gfanz/bayescan'
