@@ -1,0 +1,1 @@
+alias seqhax='docker run --rm -v /mnt:/mnt gfanz/seqhax'
