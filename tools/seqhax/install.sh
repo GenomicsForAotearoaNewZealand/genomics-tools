@@ -18,4 +18,4 @@ make
 
 # FIXME This does not install in /opt as defined in our conventions. Make it do that.
 
-sudo make install
+make install
