@@ -1,1 +1,1 @@
-alias axe-demux='docker run --rm -v /mnt:/mnt gfanz/template'
+alias axe-demux='docker run --rm -v /mnt:/mnt gfanz/axe-demultiplexer'
