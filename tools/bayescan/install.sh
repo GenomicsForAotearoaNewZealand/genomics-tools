@@ -5,7 +5,7 @@
 # It depends on a standard Debian 9 cloud instance.
 
 # install not listed dependencies
-apt-get -y install unzip 
+apt-get -y install unzip wget
 
 # create temporary folders, get the zip file and unzip it
 
