@@ -10,12 +10,9 @@ apt-get -y install byobu htop git zlib1g-dev cmake build-essential libboost-dev 
 cd /tmp
 git clone https://github.com/kdmurray91/seqhax.git
 cd seqhax
-# The following line is intended to fix the install location.
-./configure --prefix=/opt
 mkdir build && cd build
 cmake ..
 make
-
-# FIXME This does not install in /opt as defined in our conventions. Make it do that.
-
 make install
+
+mv /usr/local/bin/seqhax /opt/
