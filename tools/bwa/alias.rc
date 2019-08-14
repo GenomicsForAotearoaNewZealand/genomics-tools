@@ -1,1 +1,1 @@
-alias bwa='docker run --rm -v /mnt:/mnt gfanz/template'
+alias bwa='docker run --rm -v /mnt:/mnt gfanz/bwa'
