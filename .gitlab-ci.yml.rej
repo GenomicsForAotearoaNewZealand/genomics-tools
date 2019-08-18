@@ -1,0 +1,24 @@
+--- .gitlab-ci.yml	2019-08-17 13:50:34.218611456 +1200
++++ .gitlab-ci.yml	2019-08-17 13:06:46.840284523 +1200
+@@ -10,6 +10,11 @@
+ variables:
+   EXTERNAL_REGISTRY: "docker.io"
+ 
++cache:
++  key: "${CI_COMMIT_REF_SLUG}"
++  paths:
++    - image/
++
+ before_script:
+   - apk add bash curl git
+   - mkdir -p /builds/$CI_PROJECT_PATH/mnt
+@@ -24,9 +29,6 @@
+     - branches
+   script:
+     - bash -x pipeline/pipeline-entry.sh
+-  artifacts:
+-    paths:
+-      - image/
+ 
+ test:
+   stage: test
