@@ -32,7 +32,8 @@ structure required to add a tool to the repository.
     of the page)
 1.  Once the change has been accepted and merged by reviewer, clean up the local repository by:
     1. Change to the master branch: `git checkout master` 
-    1. Update the master branch: `git pull`
+    1. Fetch the remote, bringing the branches and their commits from the remote repository. The -p, --prune option deletes any remote-tracking references that no longer exist in the remote: `git fetch -p origin`
+    1. Merge the changes from origin/master into your local master branch. This brings your master branch in sync with the remote repository, without losing your local changes. If your local branch didn't have any unique commits, Git will instead perform a "fast-forward". `git merge origin/master`
     1. Remove your working branch: `git branch -d [your-branch-name]`
 
 ### As a reviewer, I want to accept and merge a change
