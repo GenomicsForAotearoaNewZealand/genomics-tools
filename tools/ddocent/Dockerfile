@@ -67,4 +67,4 @@ RUN ["/bin/bash", "-cx", "/home/debian/install.sh"]
 WORKDIR /mnt
 
 # Set the entrypoint
-ENTRYPOINT ["/opt/miniconda2/bin/activate"]
+ENTRYPOINT ["/opt/dDocent/dDocent"]
