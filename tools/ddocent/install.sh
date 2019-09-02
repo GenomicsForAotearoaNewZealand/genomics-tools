@@ -3,7 +3,7 @@
 # This program is to set up a docker container for the tool dDocent version 2.7.8.
 # It depends on a standard Debian 9 docker image.
 
-apt-get install wget
+apt-get install -y wget
 
 # Download and install conda
 cd /tmp
