@@ -5,6 +5,10 @@
 
 apt-get install -y locales wget freebayes stacks trimmomatic mawk bwa samtools vcftools bio-rainbow seqtk cd-hit bedtools libvcflib1 libvcflib-tools gnuplot parallel bamtools openjdk-11-jre-headless git
 
+# dDocent calls rainbow, but debian calls that programme bio-rainbow. 
+# make a soft link from /usr/bin/rainbow /usr/bin/bio-rainbow
+ln -s /usr/bin/bio-rainbow /usr/bin/rainbow
+
 # Sort local issues
 
 echo "LC_ALL=en_US.UTF-8" >> /etc/environment
