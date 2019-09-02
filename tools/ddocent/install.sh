@@ -3,23 +3,14 @@
 # This program is to set up a docker container for the tool dDocent version 2.7.8.
 # It depends on a standard Debian 9 docker image.
 
-apt-get install -y wget
+apt-get install -y wget freebayes stacks trimmomatic mawk bwa samtools vcftools bio-rainbow seqtk cd-hit bedtools libvcflib1 libvcflib-tools gnuplot parallel bamtools java git
 
-# Download and install conda
+# Download and install dDocent
 cd /tmp
-mkdir /opt/miniconda2
-chown debian:debian /opt/miniconda2
-wget https://repo.continuum.io/miniconda/Miniconda2-latest-Linux-x86_64.sh
-bash Miniconda2-latest-Linux-x86_64.sh -f -b -p /opt/miniconda2
+git clone https://github.com/relshire/dDocent.git
+mv ./dDocent /opt/
 
-# Install dDocent
-/opt/miniconda2/bin/conda config --add channels r
-/opt/miniconda2/bin/conda config --add channels defaults
-/opt/miniconda2/bin/conda config --add channels conda-forge
-/opt/miniconda2/bin/conda config --add channels bioconda
-/opt/miniconda2/bin/conda  create -y -n ddocent_env ddocent
+#sudo chown debian:debian /opt/dDocent
 
-# Put conda in the default user path so that the user can run things installed
-# via conda.
-echo '# The following puts the miniconda2 installation in the user path.' >> ~/.bashrc
-echo 'export PATH="/opt/miniconda2/bin:$PATH"' >> ~/.bashrc
+echo '# The following puts the dDocent installation in the user path.' >> ~/.bashrc
+echo 'export PATH="/opt/dDocent/bin:$PATH"' >> ~/.bashrc
