@@ -1,0 +1,1 @@
+alias activate='docker run --rm -v /mnt:/mnt gfanz/ddocent'
