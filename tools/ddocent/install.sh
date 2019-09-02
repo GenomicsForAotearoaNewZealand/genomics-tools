@@ -5,6 +5,13 @@
 
 apt-get install -y locales wget freebayes stacks trimmomatic mawk bwa samtools vcftools bio-rainbow seqtk cd-hit bedtools libvcflib1 libvcflib-tools gnuplot parallel bamtools openjdk-11-jre-headless git
 
+# Sort local issues
+
+echo "LC_ALL=en_US.UTF-8" >> /etc/environment
+echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen
+echo "LANG=en_US.UTF-8" > /etc/locale.conf
+locale-gen en_US.UTF-8
+
 # Download and install dDocent
 cd /tmp
 git clone https://github.com/relshire/dDocent.git
