@@ -9,6 +9,10 @@ apt-get install -y locales wget freebayes stacks trimmomatic mawk bwa samtools v
 # make a soft link from /usr/bin/rainbow /usr/bin/bio-rainbow
 ln -s /usr/bin/bio-rainbow /usr/bin/rainbow
 
+# dDocent can not find vcfcombine in its usual location.
+# make a soft linke from /usr/libvcflib/bin/vcfcombine /usr//vcfcombine
+ln -s /usr/lib/vcflib/bin/vcfcombine /usr/bin/vcfcombine
+
 # Sort local issues
 
 echo "LC_ALL=en_US.UTF-8" >> /etc/environment
@@ -27,5 +31,3 @@ mv ./dDocent /opt/
 
 echo '# The following puts the dDocent installation in the user path.' >> ~/.bashrc
 echo 'export PATH="/opt/dDocent/bin:$PATH"' >> ~/.bashrc
-echo '# The following puts the vcfcombine in the user path.' >> ~/.bashrc
-echo 'export PATH="/usr/lib/vcflib/bin/:$PATH"' >> ~/.bashrc
