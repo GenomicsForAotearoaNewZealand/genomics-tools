@@ -1,0 +1,1 @@
+alias dape='docker run --rm -v /mnt:/mnt /usr/local/bin/dape' ; alias dgenome='docker run --rm -v /mnt:/mnt --entrypoint "/usr/local/bin/dgenome' ; alias dphenome='docker run --rm -v /mnt:/mnt --entrypoint "/usr/local/bin/dphenome'
