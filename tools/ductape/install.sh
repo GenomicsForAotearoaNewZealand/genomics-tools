@@ -6,6 +6,6 @@
 # install ductape
 apt-get install -y python-numpy python-scipy python-sklearn python-matplotlib python-biopython python-networkx python3-networkx python3-numpy python3-scipy python3-matplotlib ncbi-blast+
 apt-get install -y python-pip
-sudo pip install DuctApe
+pip install DuctApe
 
 
