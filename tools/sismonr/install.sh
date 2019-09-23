@@ -4,6 +4,7 @@
 # It assumes a Debian 9 base image has been used for the container.
 
 # Install julia
+apt-get install -y wget
 wget https://julialang-s3.julialang.org/bin/linux/x64/1.0/julia-1.0.5-linux-x86_64.tar.gz
 tar xvzf julia-1.0.5-linux-x86_64.tar.gz
 ln -s $(pwd)/julia-1.0.5/bin/julia /usr/local/bin/julia
