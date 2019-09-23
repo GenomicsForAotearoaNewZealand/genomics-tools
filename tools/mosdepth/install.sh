@@ -7,5 +7,5 @@ apt-get install -y wget
 
 # install mosdepth
 wget https://github.com/brentp/mosdepth/releases/download/v0.2.6/mosdepth
-cp mosdepth /usr/local/bin/
-chmod +x /usr/local/bin/mosdepth
+cp mosdepth /opt/mosdepth
+chmod +x /opt/mosdepth
