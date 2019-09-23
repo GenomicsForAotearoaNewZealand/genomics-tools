@@ -1,5 +1,3 @@
-#!/bin/bash
-
 # This program is to set up a docker image for the DuctApe 0.17.13
 # It assumes a Debian 9 base image has been used for the container.
 
