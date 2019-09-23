@@ -2,7 +2,7 @@
 
 # If command runs successfully, then output GFANZ_TEST_RESULTS=OK. If it does not, then output
 # GFANZ_TEST_RESULTS=ERROR.
-mosdepth -h | grep mosdepth >> /dev/null
+/opt/mosdepth -h | grep mosdepth >> /dev/null
 
 if [ $? -eq 0 ]; then
   echo "GFANZ_TEST_RESULTS=OK"
