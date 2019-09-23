@@ -3,7 +3,7 @@
 # Try /usr/local/bin/dape  and see if it is returns DuctApe.
 # If it does, then output GFANZ_TEST_RESULTS=OK. If it does not, then output
 # GFANZ_TEST_RESULTS=ERROR.
-/usr/local/bin/dape --version | grep dape >> /dev/null
+/usr/local/bin/dape --version 2>&1 | grep dape 
 
 
 if [ $? -eq 0 ]; then
