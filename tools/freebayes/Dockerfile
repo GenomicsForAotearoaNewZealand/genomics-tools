@@ -1,6 +1,6 @@
 # Base image (note that a specific version of the base image must be used,
 # never the "latest") or "stable"
-FROM debian:9
+FROM debian:bullseye
 
 ##########
 # Metadata
@@ -67,4 +67,4 @@ RUN ["/bin/bash", "-cx", "/home/debian/install.sh"]
 WORKDIR /mnt
 
 # Set the entrypoint
-ENTRYPOINT ["/opt/helloworld.sh"]
+ENTRYPOINT [“/usr/bin/freebayes”]
