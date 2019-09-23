@@ -18,5 +18,15 @@ add-apt-repository 'deb https://cloud.r-project.org/bin/linux/debian stretch-cra
 apt update
 apt install -y r-base
 
+# Test that the correct version of R is installed
+R --version | grep '3.6.1'
+if [ $? -eq 0 ]; then
+  echo "GFANZ_TEST_RESULTS=OK"
+  exit 0
+else
+  echo "GFANZ_TEST_RESULTS=ERROR"
+  exit 1
+fi
+
 # Install the R package checkpoint globally
 Rscript -e "install.packages('sismonr', repos='https://cran.stat.auckland.ac.nz')"
