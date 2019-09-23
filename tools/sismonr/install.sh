@@ -22,7 +22,6 @@ apt install -y r-base
 R --version | grep '3.6.1'
 if [ $? -eq 0 ]; then
   echo "GFANZ_TEST_RESULTS=OK"
-  exit 0
 else
   echo "GFANZ_TEST_RESULTS=ERROR"
   exit 1
