@@ -7,9 +7,10 @@ workflows.
 
 ## Contributing to this repository
 
-The source code is hosted on https://gitlab.com/gfanz/genomics-tools and a copy
+The source code is hosted on https://gitlab.com/gfanz/genomics-tools and a copy 
 is kept in github.com for convenience. Please submit merge requests via GitLab.
 
+If you are not familiar with git, please check the dedicated wiki page: https://gitlab.com/gfanz/genomics-tools/wikis/Git-basic
 ## Proposing a new tool
 
 Thank you for contributing. Please read `tools/README.md` for more information on the conventions and
