@@ -1,0 +1,1 @@
+alias freebayes='docker run --rm -v /mnt:/mnt gfanz/freebayes’
