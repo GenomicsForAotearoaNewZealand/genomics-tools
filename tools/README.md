@@ -20,8 +20,10 @@ The tool directory must contain the following files:
 `MAINTAINER` | The email of the person that maintains the container image
 `PAPER` | Where to find the scientific paper related to this tool
 `README.md` | A description of the tool in mark down format
+`SOURCE` | The source link of the tool
 `test.sh` | A test script that runs automated tests to validate the tool works as expected
 `VERSION` | The version of the tool
+
 
 ### Dockerfile
 
