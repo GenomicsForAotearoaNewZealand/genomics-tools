@@ -3,7 +3,7 @@
 # This program is to set up a docker image for Meraculous-2D.
 # It assumes a Debian 9 base image has been used for the container.
 
-aptget -y install wget
+apt-get -y install wget
 
 # download and install Meraculous
 
