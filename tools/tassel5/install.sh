@@ -10,7 +10,7 @@ apt-get -y install openjdk-8-jdk-headless wget
 cd /opt
 
 # Get the version of TASSEL5 with modified enzymes
-wget --no-check-certificate  "https://data.elshiregroup.co.nz/index.php/s/8yXooTjYiZZeRpS/download" -P /tmp
+wget --no-check-certificate  "https://data.elshiregroup.co.nz/index.php/s/mibW6xktz4GzBqn/download" -P /tmp
 mv /tmp/download /tmp/tassel5-TEGenzymes.v.2.tar.gz
 
 # Unpack TASSEL5
