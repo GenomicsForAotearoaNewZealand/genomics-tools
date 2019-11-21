@@ -1,6 +1,8 @@
-This documentation describes the process and requirements for adding new tools to the **genomics-tools** repository. A **tool** is something that performs a specific job, such as "axe-demux" to run a demultiplexing step of a given pipeline.
+This documentation describes the process and requirements for adding new tools to the **genomics-tools** repository. A **tool** is something that performs a specific job, such as "axe-demux" to run a demultiplexing step of a given pipeline. Such tools are also fixed version of the *something* in a fixed version of a OS enviroment. 
 
 ## Create a new tool directory
+
+GFANZ believe in freedom and sharing. For this reasons, in this project only free software and/or open source license material will be welcomed. Please check if the tool you are about to create fullfills this requirements. If you are not familiar with open source licencing, you can find detailed information [here](https://opensource.org/licenses). 
 
 A new directory must be created under the existing `tools` directory for each tool. This directory is referred to as ``${TOOL_NAME}`` in this documentation.
 
