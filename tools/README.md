@@ -20,11 +20,11 @@ The tool directory must contain the following files:
 `install.sh` | An install script that takes care of all steps required to install the tool on top of the base image
 `LICENSE` | The software license applicable to the tool
 `MAINTAINER` | The email of the person that maintains the container image
-`PAPER` | Where to find the scientific paper related to this tool
+`PAPER` | Where to find the scientific paper related to this tool. For easier trackability please use the DOI of the paper.
 `README.md` | A description of the tool in mark down format
 `SOURCE` | The source link of the tool
 `test.sh` | A test script that runs automated tests to validate the tool works as expected
-`VERSION` | The version of the tool
+`VERSION` | The version of the **tool**. The Docker will generate automatically its own version number.
 
 
 ### Dockerfile
@@ -36,7 +36,7 @@ Container images must be labelled following the standard described below, so tha
 **Standard** | **Label** | **Description** | **Source**
 --- | --- | --- | ---
 Docker | maintainer | Email of the maintainer of this container image | File: tools/${TOOL_NAME}/MAINTAINER
-Label Schema RC1 | org.label-schema.schema-version | The version of the label schema being used (see http://label-schema.org) | Hard-coded: 1.0
+Label Schema RC1 | org.label-schema.schema-version | The version of the label schema being used (see http://label-schema.org/rc1/) | Hard-coded: 1.0
 Label Schema RC1 | org.label-schema.version | Release identifier for the image following the semantic versioning 2.0.0 convention (see https://semver.org) | File: tools/${TOOL_NAME}/VERSION
 Label Schema RC1 | org.label-schema.vendor | The organization that produced this image | Hard-coded: Genomics for Aotearoa New Zealand
 Label Schema RC1 | org.label-schema.name | A human friendly name for the image | Directory: tools/${TOOL_NAME}
@@ -45,7 +45,7 @@ Label Schema RC1 | org.label-schema.vcs-ref | Identifier for the version of the 
 Label Schema RC1 | org.label-schema.usage | Link to  URL that provides usage instructions | File: tools/${TOOL_NAME}/DOCS
 Label Schema RC1 | org.label-schema.url | Where to find the scientific paper related to this tool | File: tools/${TOOL_NAME}/PAPER
 
-#### Sample file
+#### Dockerfile - Example 
 
 ```Dockerfile
 # Base image (note that a specific version of the base image must be used,
@@ -121,7 +121,7 @@ The ``install.sh`` script must meet these requirements:
 1.  If installed from external repositories or source code, binaries must be placed on `/opt` and added to `$PATH`.
 1.  Temporary build files (such as source code packages or tarballs) must be stored on `/tmp`.
 
-#### Sample file
+#### install.sh - Example
 
 ```bash
 #!/bin/bash
@@ -141,7 +141,7 @@ The ``test.sh`` script must meet these requirements:
 1.  The test script will print "GFANZ_TEST_RESULTS=OK" to the standard output if they succeed and exit with return code 0 (zero)
 1.  The test script will print "GFANZ_TEST_RESULTS=ERROR" to the standard output if they fail and exit with return code 1 (one)
 
-#### Sample file
+#### test.sh - example
 
 ```bash
 #!/bin/bash
@@ -160,17 +160,14 @@ else
 fi
 ```
 
-### LICENSE
-
-#### Sample file
+### LICENSE -Example
 
 ```
 GNU General Public License v3.0
 ```
 
-### MAINTAINER
+### MAINTAINER - Example
 
-#### Sample file
 
 ```
 rob@elshiregroup.co.nz
@@ -180,33 +177,27 @@ rob@elshiregroup.co.nz
 
 #### Requirements
 
-Release identifier for the image following the semantic versioning 2.0.0 convention (see https://semver.org).
+The version of the tool. The Docker will generate automatically its own version number.
 
-#### Sample file
+#### VERSION - Example
 
 ```
 2.3.0
 ```
 
-### DOCS
-
-#### Sample file
+### DOCS - Example
 
 ```
 http://bowtie-bio.sourceforge.net/bowtie2/manual.shtml
 ```
 
-### PAPER
-
-#### Sample file
+### PAPER - Example
 
 ```
-https://www.nature.com/articles/nmeth.1923
+https://doi.org/10.1038/nmeth.1923
 ```
 
-### README.md
-
-#### Sample file
+### README.md - Example
 
 ```
 # Bowtie 2
@@ -222,13 +213,13 @@ Bowtie 2 is a tool for aligning sequence reads to a reference genome.
 
 The command used to set up an alias that will run the containerised tool, as if it had been installed locally. If multiple aliases are required, they should be provided as a single line command (using `&&` to concatenate multiple aliases).
 
-#### Sample file (single alias)
+#### Single alias - Example
 
 ```
 alias bowtie2='docker run -rm -v /mnt:/mnt gfanz/bowtie2'
 ```
 
-#### Sample file (multiple aliases)
+#### Multiple aliases - Example
 ```
 alias bowtie2='docker run -rm -v /mnt:/mnt gfanz/bowtie2' && alias bowtie2-align-s='docker run -rm -v /mnt:/mnt --entrypoint "/usr/bin/bowtie2-align-s" gfanz/bowtie2'
 ```
