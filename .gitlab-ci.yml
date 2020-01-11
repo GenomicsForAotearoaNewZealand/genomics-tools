@@ -9,7 +9,7 @@ stages:
 
 variables:
   EXTERNAL_REGISTRY: "docker.io"
-
+  
 cache:
   key: "${CI_COMMIT_REF_SLUG}"
   paths:
@@ -25,6 +25,8 @@ before_script:
 
 build:
   stage: build
+  variables:
+    GIT_STRATEGY: clone
   only:
     - branches
   script:
