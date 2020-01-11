@@ -32,7 +32,7 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 
-# Tag the image with teh "${VERSION}", "${VERSION}-${CI_COMMIT_SHORT_SHA}", and
+# Tag the image with the "${VERSION}", "${VERSION}-${CI_COMMIT_SHORT_SHA}", and
 # "latest" tags.
 echo "Tagging ${EXTERNAL_REGISTRY}/${CI_PROJECT_NAMESPACE}."
 VERSION=$(cat tools/${TOOL}/VERSION)
@@ -52,6 +52,29 @@ echo "Pushing container image to registry."
 docker push ${CI_PROJECT_NAMESPACE}/${TOOL}
 if [ $? -ne 0 ]; then
   echo "Pushing ${TOOL} to ${CI_PROJECT_NAMESPACE}/${TOOL} failed. Exiting."
+  exit 1
+fi
+
+# Process to update the full description for a tool on dockerhub. 
+
+# Select the README.md file for the current tool to use as the full description.
+
+README_FILEPATH="${TOOL}/README.md"
+
+# Acquire a token for the Docker Hub API
+echo "Acquiring token"
+LOGIN_PAYLOAD="{\"username\": \"${DOCKER_IO_USER}\", \"password\": \"${DOCKER_IO_PASSWORD}\"}"
+TOKEN=$(curl -s -H "Content-Type: application/json" -X POST -d ${LOGIN_PAYLOAD} https://hub.docker.com/v2/users/login/ | jq -r .token)
+
+# Send a PATCH request to update the description of the repository
+echo "Sending PATCH request"
+REPO_URL="https://hub.docker.com/v2/repositories/gfanz/${TOOL}/"
+RESPONSE_CODE=$(curl -s --write-out %{response_code} --output /dev/null -H "Authorization: JWT ${TOKEN}" -X PATCH --data-urlencode full_description@${README_FILEPATH} ${REPO_URL})
+echo "Received response code: $RESPONSE_CODE"
+
+if [ $RESPONSE_CODE -eq 200 ]; then
+  echo "Update FIXME "
+else
   exit 1
 fi
 
