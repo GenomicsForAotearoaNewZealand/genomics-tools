@@ -61,10 +61,17 @@ fi
 
 README_FILEPATH="${TOOL}/README.md"
 
+# Test that this is the right patch
+
+cat $README_FILEPATH
+
 # Acquire a token for the Docker Hub API
 echo "Acquiring token"
 LOGIN_PAYLOAD="{\"username\": \"${DOCKER_IO_USER}\", \"password\": \"${DOCKER_IO_PASSWORD}\"}"
 TOKEN=$(curl -s -H "Content-Type: application/json" -X POST -d ${LOGIN_PAYLOAD} https://hub.docker.com/v2/users/login/ | jq -r .token)
+
+# Did we get a token?
+echo $TOKEN
 
 # Send a PATCH request to update the description of the repository
 echo "Sending PATCH request"
