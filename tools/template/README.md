@@ -6,4 +6,4 @@ This tool is just a template for use in creating other tools. It is very basic, 
 
 ## Delta
 
-This is just used to trigger the ci-cd for testing.
+This is just used to trigger the ci-cd testing.
