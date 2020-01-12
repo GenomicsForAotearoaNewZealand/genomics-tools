@@ -59,7 +59,7 @@ fi
 
 # Select the README.md file for the current tool to use as the full description.
 
-README_FILEPATH="./genomics-tools/${TOOL}/README.md"
+README_FILEPATH="${CI_MERGE_REQUEST_PROJECT_PATH}/tools/${TOOL}/README.md"
 
 # Test that this is the right patch
 
