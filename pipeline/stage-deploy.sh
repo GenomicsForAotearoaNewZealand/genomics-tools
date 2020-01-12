@@ -59,24 +59,17 @@ fi
 
 # Select the README.md file for the current tool to use as the full description.
 
-README_FILEPATH="${TOOL}/README.md"
+README_FILEPATH=" ${CI_PROJECT_NAMESPACE}/${TOOL}/README.md"
 
 # Test that this is the right patch
 
 cat $README_FILEPATH
 
-# Acquire a token for the Docker Hub API
-echo "Acquiring token"
-LOGIN_PAYLOAD="{\"username\": \"${DOCKER_IO_USER}\", \"password\": \"${DOCKER_IO_PASSWORD}\"}"
-TOKEN=$(curl -s -H "Content-Type: application/json" -X POST -d ${LOGIN_PAYLOAD} https://hub.docker.com/v2/users/login/ | jq -r .token)
-
-# Did we get a token?
-echo $TOKEN
 
 # Send a PATCH request to update the description of the repository
 echo "Sending PATCH request"
 REPO_URL="https://hub.docker.com/v2/repositories/gfanz/${TOOL}/"
-RESPONSE_CODE=$(curl -s --write-out %{response_code} --output /dev/null -H "Authorization: JWT ${TOKEN}" -X PATCH --data-urlencode full_description@${README_FILEPATH} ${REPO_URL})
+RESPONSE_CODE=$(curl -s --write-out %{response_code} --output /dev/null -H "Authorization: JWT ${DOCKER_IO_TOKEN}" -X PATCH --data-urlencode full_description@${README_FILEPATH} ${REPO_URL})
 echo "Received response code: $RESPONSE_CODE"
 
 if [ $RESPONSE_CODE -eq 200 ]; then
