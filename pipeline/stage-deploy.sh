@@ -58,24 +58,26 @@ fi
 # Process to update the full description for a tool on dockerhub. 
 
 # Select the README.md file for the current tool to use as the full description.
-
-README_FILEPATH="${CI_MERGE_REQUEST_PROJECT_PATH}/tools/${TOOL}/README.md"
+# The path below is still not working right.
+#README_FILEPATH="${CI_MERGE_REQUEST_PROJECT_PATH}/tools/${TOOL}/README.md"
 
 # Test that this is the right patch
 
-cat $README_FILEPATH
+#cat $README_FILEPATH
 
 
 # Send a PATCH request to update the description of the repository
-echo "Sending PATCH request"
-REPO_URL="https://hub.docker.com/v2/repositories/gfanz/${TOOL}/"
-RESPONSE_CODE=$(curl -s --write-out %{response_code} --output /dev/null -H "Authorization: JWT ${DOCKER_IO_TOKEN}" -X PATCH --data-urlencode full_description@${README_FILEPATH} ${REPO_URL})
-echo "Received response code: $RESPONSE_CODE"
+# Halting on this work for the moment RJE 20200112
 
-if [ $RESPONSE_CODE -eq 200 ]; then
-  echo "Update FIXME "
-else
-  exit 1
-fi
+#echo "Sending PATCH request"
+#REPO_URL="https://hub.docker.com/v2/repositories/gfanz/${TOOL}/"
+#RESPONSE_CODE=$(curl -s --write-out %{response_code} --output /dev/null -H "Authorization: JWT ${DOCKER_IO_TOKEN}" -X PATCH --data-urlencode #full_description@${README_FILEPATH} ${REPO_URL})
+#echo "Received response code: $RESPONSE_CODE"
+
+#if [ $RESPONSE_CODE -eq 200 ]; then
+#  echo "Update FIXME "
+#else
+#  exit 1
+#fi
 
 exit 0
