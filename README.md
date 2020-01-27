@@ -1,7 +1,7 @@
 # GFANZ Genomics Tools
 
 This repository contains a collection of of curated genomics tools and
-workflows. For more information about the project and instructions on how to use the tools, see the [project wiki](https://gitlab.com/gfanz/genomics-tools/-/wikis/home)
+workflows. For more information about the project and instructions on how to use the tools, see the [project wiki](https://gitlab.com/gfanz/genomics-tools/-/wikis/home).
 
 [![pipeline status](https://gitlab.com/gfanz/genomics-tools/badges/master/pipeline.svg)](https://gitlab.com/gfanz/genomics-tools/commits/master)
 
