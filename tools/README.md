@@ -2,7 +2,7 @@ This documentation describes the process and requirements for adding new tools t
 
 ## Create a new tool directory
 
-GFANZ believe in freedom and sharing. For this reasons, in this project only free software and/or open source license material will be welcomed. Please check if the tool you are about to create fullfills this requirements. If you are not familiar with open source licencing, you can find detailed information [here](https://opensource.org/licenses). 
+GFANZ believes in freedom and sharing. The sofware embodiment of these ideas is in free software licensing which provides freedom for the user through sharing. Software licensed under proprietary / non-free terms cannot be shared, and therefore cannot be included in this project. Please check if the tool you are about to create fullfills this requirements. If you are not familiar with open source licencing, you can find detailed information [here](https://opensource.org/licenses). 
 
 A new directory must be created under the existing `tools` directory for each tool. This directory is referred to as ``${TOOL_NAME}`` in this documentation.
 
@@ -26,6 +26,7 @@ The tool directory must contain the following files:
 `test.sh` | A test script that runs automated tests to validate the tool works as expected
 `VERSION` | The version of the **tool**. The Docker will generate automatically its own version number.
 
+The easiest way to include these files is to copy those from the template tool folder. Then modify them as required for your new tool.
 
 ### Dockerfile
 
