@@ -26,7 +26,7 @@ cat PAPER >> README.md
 
 echo "## How to use GFANZ Docker Containers" >> README.md
 
-echo "https://gitlab.com/gfanz/genomics-tools/-/wikis/home" >> README.md
+echo "https://gitlab.com/gfanz/genomics-tools/-/wikis/Using-GFANZ-Genomics-Tools" >> README.md
 
 echo "## Documentation" >> README.md
 
