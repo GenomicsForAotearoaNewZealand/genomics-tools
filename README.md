@@ -21,7 +21,7 @@ structure required to add a tool to the repository.
 1.  Clone the repository: `git clone git@gitlab.com:gfanz/genomics-tools.git`
 1.  Change directory to the cloned repository: `cd genomics-tools`
 1.  Create a new branch: `git checkout -b [your-branch-name]`
-1.  Create a new dirctory with your tool name.
+1.  Create a new directory with your tool name.
 1.  Copy the contents of the template tool directory into the directory you just created.
 1.  Use your favourite code editor to propose your changes
 1.  Commit when done: `git add . && git commit`
