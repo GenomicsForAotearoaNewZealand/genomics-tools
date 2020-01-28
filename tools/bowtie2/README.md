@@ -11,4 +11,4 @@ http://bowtie-bio.sourceforge.net/bowtie2/manual.shtml
 ## Source Code
 https://sourceforge.net/projects/bowtie-bio/files/bowtie2/
 ## License
-GNU General Public License v3.0
+GPL-3.0-or-later
