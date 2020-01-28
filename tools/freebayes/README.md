@@ -9,5 +9,6 @@ https://gitlab.com/gfanz/genomics-tools/-/wikis/Using-GFANZ-Genomics-Tools
 ## Documentation
 https://github.com/ekg/freebayes
 ## Source Code
-https://github.com/ekg/freebayes## License
+https://github.com/ekg/freebayes
+## License
 MIT
