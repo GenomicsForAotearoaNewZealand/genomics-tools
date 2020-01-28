@@ -1,7 +1,13 @@
-# DuctApe
-
-## Description
-
-DuctApe is a software suite that will help bioinformaticians to analyze genomes AND phenomic experiments.
-The final purpose of the program is to combine the genomic informations (encoded as KEGG pathways) with the results of phenomic experiments (Phenotype Microarrays) and highlight the genes that may be responsible for phenotypic variations.
-DuctApe it's written in python and works as a command line tool for Unix environments.
+## Tool Name
+ductape
+## Version
+0.17.13
+## Citation
+DuctApe: A suite for the analysis and correlation of genomic and OmniLog™ Phenotype Microarray data
+https://www.sciencedirect.com/science/article/pii/S0888754313002085
+## How to use GFANZ Docker Containers
+https://gitlab.com/gfanz/genomics-tools/-/wikis/Using-GFANZ-Genomics-Tools
+## Documentation
+https://combogenomics.github.io/DuctApe/howto.html## Source Code
+http://combogenomics.github.io/DuctApe/index.html## License
+BSD-2-Clause
