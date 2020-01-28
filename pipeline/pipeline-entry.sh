@@ -53,12 +53,16 @@ if [[ ${TOOLS_MODIFIED} == "" ]]; then
   exit 0
 else
   for TOOL in ${TOOLS_MODIFIED}; do
+    if TOOL == "README.md"; then
+        echo "README.md modified moving on"
+    else    
     bash -x "pipeline/stage-${CI_JOB_STAGE}.sh" "${TOOL}"
-    if [ $? -eq 0 ]; then
-      echo "Stage ${CI_JOB_STAGE} for ${TOOL} succeeded."
-    else
-      echo "Stage ${CI_JOB_STAGE} for ${TOOL} failed. Exiting."
-      exit 1
+        if [ $? -eq 0 ]; then
+        echo "Stage ${CI_JOB_STAGE} for ${TOOL} succeeded."
+        else
+          echo "Stage ${CI_JOB_STAGE} for ${TOOL} failed. Exiting."
+          exit 1
+        fi
     fi
   done
 fi
