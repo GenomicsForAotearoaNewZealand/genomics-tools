@@ -20,11 +20,11 @@ apt update
 apt install -y r-base
 
 # Test that the correct version of R is installed
-R --version | grep '3.6.1'
+R --version | grep '3.6.2'
 if [ $? -eq 0 ]; then
-  echo "GFANZ_TEST_RESULTS=OK"
+  echo "Correct R version"
 else
-  echo "GFANZ_TEST_RESULTS=ERROR"
+  echo "Incorrect R version"
   exit 1
 fi
 
