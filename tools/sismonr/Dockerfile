@@ -27,23 +27,23 @@ ARG PAPER
 ARG COMMAND
 
 # The author of this container image
-LABEL maintainer="$MAINTAINER"
+LABEL org.opencontainers.image.authors="$MAINTAINER"
 # Release identifier for the image following https://semver.org
-LABEL org.label-schema.version="$VERSION"
-# Additional lables following the convention of http://label-schema.org
-LABEL org.label-schema.schema-version="1.0"
+LABEL org.opencontainers.image.version="$VERSION"
+
+
 # The organization that produces this image.
-LABEL org.label-schema.vendor="Genomics for Aotearoa New Zealand"
+LABEL org.opencontainers.image.vendor="Genomics for Aotearoa New Zealand"
 # A human friendly name for the image (the tool directory name)
-LABEL org.label-schema.name="gfanz/$TOOL_NAME"
+LABEL org.opencontainers.image.title="gfanz/$TOOL_NAME"
 # The date the image was built following the RFC 3339 format
-LABEL org.label-schema.build-date="$BUILD_DATE"
+LABEL org.opencontainers.image.created="$BUILD_DATE"
 # Identifier for the version of the source code from which this image was built
-LABEL org.label-schema.vcs-ref="$COMMIT_ID"
+LABEL org.opencontainers.image.revision-ref="$COMMIT_ID"
 # Where to find documentation or instructions on how to use the tool
-LABEL org.label-schema.usage="$DOCS"
+LABEL org.opencontainers.image.documentation="$DOCS"
 # Where to find the scientific paper related to this tool
-LABEL org.label-schema.url="$PAPER"
+LABEL org.opencontainers.image.url="$PAPER"
 # Command used to set up aliases for the containerised tool
 LABEL org.label-schema.docker.cmd="$COMMAND"
 
