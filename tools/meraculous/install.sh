@@ -15,6 +15,7 @@ apt-get -y install \
                 cmake \
                 libboost-all-dev \
                 liblog-log4perl-perl \
+                libpackage-constants-perl \
                 gnuplot \
                 wget
 

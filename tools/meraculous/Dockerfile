@@ -67,4 +67,4 @@ RUN ["/bin/bash", "-cx", "/home/debian/install.sh"]
 WORKDIR /mnt
 
 # Set the entrypoint
-ENTRYPOINT ["/opt/meraculous/bin/meraculous.pl"]
+ENTRYPOINT ["/opt/meraculous/bin/run_meraculous.sh"]
