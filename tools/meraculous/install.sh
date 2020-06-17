@@ -17,7 +17,8 @@ apt-get -y install \
                 liblog-log4perl-perl \
                 libpackage-constants-perl \
                 gnuplot \
-                wget
+                wget \
+                bc
 
 # download
 mkdir -p /tmp/meraculous
@@ -32,3 +33,6 @@ cd Meraculous-v$VERSION
 
 # clean up
 rm -rf /tmp/meraculous
+
+# add MERACULOUS_ROOT=/opt/meraculous to .bashrc for root user
+echo 'export MERACULOUS_ROOT=/opt/meraculous' >> ~/.bashrc
