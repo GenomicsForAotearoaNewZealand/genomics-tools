@@ -28,11 +28,16 @@ mv download Meraculous-v$VERSION.tar.gz
 tar -xzf Meraculous-v$VERSION.tar.gz
 cd Meraculous-v$VERSION
 
+# Modify evaluate_meraculous_run.sh to hard code MERACULOUS_ROOT
+# This is necessary because it expects an environment variable which
+# is not available within the docker container. At least, I do not know
+# how to set it...
+
+sed -i '/Need to set MERACULOUS_ROOT/c\MERACULOUS_ROOT=/opt/meraculous' /tmp/meraculous/Meraculous-v$VERSION/src/evaluate_meraculous_run.sh
+
 # install
 ./install.sh /opt/meraculous
 
 # clean up
 rm -rf /tmp/meraculous
-
-# add MERACULOUS_ROOT=/opt/meraculous to .bashrc for root user
-echo 'export MERACULOUS_ROOT=/opt/meraculous' >> ~/.bashrc
+apt-get remove --purge -y build-essential cmake wget
