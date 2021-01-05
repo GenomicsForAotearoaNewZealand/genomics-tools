@@ -1,0 +1,1 @@
+alias structure_threader='docker run --rm -v /mnt:/mnt gfanz/structure_threader'
