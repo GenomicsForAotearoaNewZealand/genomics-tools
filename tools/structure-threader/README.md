@@ -10,5 +10,5 @@ https://gitlab.com/gfanz/genomics-tools/-/wikis/Using-GFANZ-Genomics-Tools
 https://structure-threader.readthedocs.io/en/latest/
 ## Source Code
 https://github.com/StuntsPT/Structure_threader
-## License
+## License 
 GPL-3.0-only
