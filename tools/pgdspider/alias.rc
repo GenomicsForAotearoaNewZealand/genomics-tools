@@ -1,0 +1,1 @@
+alias pgdspider='docker run --rm -v /mnt:/mnt gfanz/pgdspider'
